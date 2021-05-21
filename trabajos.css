@@ -1,0 +1,206 @@
+:root {
+    --color1: rgb(219, 144, .5);
+    --color2: rgba(23, 180, 83, 0.877);
+    --color3: rgba(11, 194, 211, 0.623);
+    --fondo: #f2f2f2;
+    --titulos: 33px;
+    --margenes: 60px;
+    --espacios: 10px;
+    --espacios-contenido: 45px;
+}
+
+.contenedor {
+    margin: auto;
+    /*le asignamos la variable que tenemos para los margenes que es de 60px*/
+    padding: var(--margenes)0;
+    width: 90%;
+    max-width: 1000px;
+    /*Para que todo este centrado*/
+    text-align: center;
+    overflow: hidden;
+}
+
+
+/*esto cirbe para centrar textos */
+
+.centrar {
+    text-align: center;
+}
+
+.after::after {
+    text-align: center;
+    content: '';
+    display: block;
+    margin: auto;
+    margin-top: var(--espacios);
+    width: 100px;
+    height: 2px;
+    background: var(--color1);
+    margin-bottom: var(--espacios-contenido);
+}
+
+.galeria-links {
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 300;
+    background: salmon;
+    display: block;
+    padding: 0.1px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.galeria-links:hover {
+    background: rgb(250, 93, 75);
+}
+
+.botones-work {
+    overflow: hidden;
+}
+
+
+/*Ahora vamos a transformar los listados(<li>) en botones*/
+
+.botones-work li {
+    display: inline-block;
+    text-align: center;
+    margin-left: var(--espacios);
+    margin-bottom: var(--espacios-contenido);
+    padding: 6px 12px;
+    border: 1px solid var(--color1);
+    list-style: none;
+    color: var(--color1);
+}
+
+.botones-work a {
+    display: inline-block;
+    text-align: center;
+    margin-left: var(--espacios);
+    margin-bottom: var(--espacios-contenido);
+    padding: 6px 12px;
+    border: 1px solid var(--color1);
+    list-style: none;
+    color: var(--color1);
+    text-decoration: none;
+}
+
+
+/*Recuerda que los hover sirven para que al pasar el cursor por ensima de un boton
+texto o imagen cambie de color*/
+
+.botones-work li:hover {
+    background: var(--color1);
+    color: #fff;
+    cursor: pointer;
+}
+
+.botones-work .active {
+    background: var(--color1);
+    color: #fff;
+}
+
+
+/*Ahora vamos a trasformar las imagenes que tenemos como galerias en forma de card*/
+
+.galeria-work {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.galeria-work .cont-work {
+    width: 31%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: var(--espacios-contenido);
+}
+
+.img-work {
+    height: 90%;
+    width: 100%;
+}
+
+.img-work img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.textos-work {
+    height: 10%;
+}
+
+.textos-work h4 {
+    line-height: 30px;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 700px) {
+    /*Vamos a decirle que cuando llegue a un tamaño de 700px los textos
+del h1 tendran un tamaño de 70px y los textos del h2 tendran 35 px*/
+    .textos>h1 {
+        font-size: 70px;
+    }
+    .textos>h2 {
+        font-size: 35px;
+    }
+     :root {
+        /*cuando la pagina llegue a 700 px los margenes que creamos en nuestra variable
+en vez de tener 60px tendra 30px*/
+        --margenes: 30px;
+    }
+    .tamañoh3 {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+     :root {
+        --espacios-contenido: 25px;
+    }
+    .caja-servicios {
+        width: 90%;
+        margin-bottom: var(--margenes);
+    }
+    .contenedor .cont-work {
+        width: 85%;
+        font-size: 10px;
+    }
+    .tamañoh3 {
+        font-size: 13px;
+    }
+    .filter {
+        font-size: 11px;
+    }
+    .botones-work {
+        font-size: 11px;
+    }
+    .textos h1 {
+        font-size: 50px;
+    }
+    .contenedor h3 {
+        font-weight: normal;
+        font-size: 30px;
+        text-transform: lowercase;
+    }
+}
+
+@media screen and (max-width: 411px) {
+    .tamañoh3 {
+        font-size: 10px;
+    }
+    .contenedor h3 {
+        font-weight: normal;
+        font-size: 25px;
+        text-transform: lowercase;
+    }
+    .botones-work {
+        font-size: 10px;
+    }
+    .textos h1 {
+        font-size: 40px;
+    }
+}

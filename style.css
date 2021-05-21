@@ -1,0 +1,488 @@
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+                
+                 :root {
+                    /*Con este elemento hacemos una manipulacion al scroll de la pagina*/
+                    scroll-behavior: smooth;
+                }
+                
+                body {
+                    font-family: 'Open Sans', sans-serif;
+                }
+                
+                .contenedor {
+                    width: 90%;
+                    max-width: 1200px;
+                    /*El  overflow: hidden; sirve para que todo lo que salga de nuestro contenedor se oculte*/
+                    overflow: hidden;
+                    /*El  margin: auto; sirve para que nos sentre todo*/
+                    margin: auto;
+                    /*Ahora con el padding le decimos que nos haga un espaciado de arriba y abajo de 60px y 0 hacia los lados*/
+                    padding: 60px 0;
+                }
+                
+                header {
+                    /*Le decimos que el header ocupe el 100% de lo que ocupa la pantalla*/
+                    height: 100vh;
+                    background-image: linear-gradient(to top, rgba(161, 140, 209, 0.39) 0%, rgba(251, 194, 235, 0.39) 100%), url(img/fondo-programacion\ \(1\).jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-attachment: fixed;
+                    background-position: center;
+                }
+                /*Ahora le damos forma a los textos que se encuentran en nuestro header*/
+                
+                .head {
+                    /*el text-align: center; nos sirve para centrar el texto de nuestro header*/
+                    text-align: center;
+                    padding: 0;
+                    height: 100%;
+                    /*Le agregamos un displey flex para que se posisionen verticalmente el texto*/
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    /*el  flex-direction: column; le decimos que el texto no lo junte si no que este uno arriva del otro*/
+                    flex-direction: column;
+                    color: #fff;
+                }
+                
+                .hamburguer {
+                    /*Con este elemento fixed le decimos que a nuestro boton menu que este fijo en toda la pagina aunque hagamos scroll*/
+                    position: fixed;
+                    /*Con estos elementos lo posicionamos al boton hasta izquierda*/
+                    top: 30px;
+                    right: 30px;
+                    background: #fff;
+                    width: 40px;
+                    height: 40px;
+                    cursor: pointer;
+                    border-radius: 10px;
+                    box-shadow: 0 0 6px rgb(0, 0, 0, .5);
+                }
+                
+                .menu-navegacion {
+                    /*Con este elemento fixed le decimos a nuestros enlaces que esten fijos en toda la pagina aunque hagamos scroll*/
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    /*que tengan un ancho del 30%*/
+                    width: 25%;
+                    /*Y un alto del 100% que sera cuando aparesca con el boton menu*/
+                    height: 100%;
+                    /*Y que tenga este background*/
+                    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    display: flex;
+                    /*el  flex-direction: column; le decimos que los enlaces no lo junte, si no que este uno arriva del otro*/
+                    flex-direction: column;
+                    /*Le decimos que tenga un justificado uniforma cada uno de los enlaces*/
+                    justify-content: space-evenly;
+                    /*Y centramos los enlaces*/
+                    align-items: center;
+                    transition: tranform .3s ease-in-out;
+                    /* con el transform: translate(110%); hacemos que desaparesca nuestro nav hacia la izquierda*/
+                    transform: translate(110%);
+                    box-shadow: 0 0 6px rgb(0, 0, 0, .5);
+                }
+                
+                .spread {
+                    /*Con esta clase que creamos le indicamos que cuando le demos click al boton menu (hamburgesa)
+                    Nos aparesca nuestro nav*/
+                    transform: translate(0);
+                    transition: transform .3s .2s;
+                }
+                
+                .menu-navegacion a {
+                    color: #fff;
+                    /*con el  text-decoration: none; le quitamos la linea de abajo a nuestros enlaces*/
+                    text-decoration: none;
+                }
+                
+                .titulo {
+                    font-size: 60px;
+                    margin-bottom: 15px;
+                }
+                
+                .copy {
+                    font-weight: 300;
+                    font-size: 25px;
+                }
+                /**/
+                /*Ahora le daremos magia y forma a nuestros servicios*/
+                /**/
+                
+                .subtitulos {
+                    text-align: center;
+                    font-weight: 300;
+                    color: #9f8ad0;
+                    margin-bottom: 40px;
+                    font-size: 40px;
+                }
+                
+                .contenedor-servicio {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    flex-wrap: wrap;
+                }
+                
+                .contenedor-servicio img {
+                    /*Le decimos que todas las imagenes que tengan a clase contenedor-servicio
+                    tengan un tamaño del 40%*/
+                    width: 40%;
+                }
+                
+                .checklist-servicio {
+                    width: 45%;
+                }
+                
+                .service {
+                    margin-bottom: 20px;
+                }
+                
+                .n-service {
+                    /*A nuestro apartado servicio los numero y su texto tendran este color*/
+                    margin-bottom: 7px;
+                    color: #9f8ad0;
+                }
+                
+                .number {
+                    /* le damos display: inline-block; para poder despues darle una anchura y largo 
+                    a los numeros de nuestros servicios*/
+                    display: inline-block;
+                    /*Le damos ese background para despues darle una forma sircular a su contorno de los numeros*/
+                    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+                    width: 30px;
+                    height: 30px;
+                    color: #fff;
+                    text-align: center;
+                    /*Le damos ese border-radius para redondear el background de los numeros*/
+                    border-radius: 50%;
+                    font-weight: 700;
+                    /*le damos ese line-height: 30px; para que centre verticalmente igual*/
+                    line-height: 30px;
+                    /*Le damos ese margin-right: 5px; para que tenga ese espaciado de arriva y no este muy pegado el texto*/
+                    margin-right: 5px;
+                }
+                
+                .gallery {
+                    background: #f2f2f2;
+                }
+                
+                .contenedor-galeria {
+                    display: flex;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                }
+                
+                .img-galeria {
+                    object-fit: cover;
+                    width: 30%;
+                    display: block;
+                    margin-bottom: 15px;
+                    box-shadow: 0 0 6px rgb(0, 0, 0, .5);
+                    cursor: pointer;
+                }
+                /*Apartado de la galeria cuando le demos click a una imagen de la galeria nos aparesca en pantalla*/
+                
+                .imagen-light {
+                    position: fixed;
+                    background: rgb(0, 0, 0, .6);
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transform: translate(100%);
+                }
+                
+                .show {
+                    transform: translate(0);
+                }
+                
+                .agregar-imagen {
+                    object-fit: cover;
+                    width: 60%;
+                    border-radius: 10px;
+                    transform: scale(0);
+                    transition: transform .3s .2s;
+                }
+                
+                .showImage {
+                    transform: scale(1);
+                }
+                
+                .close {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    width: 40px;
+                    cursor: pointer;
+                }
+                /*Apartado de expertos en:*/
+                
+                .experts {
+                    /*con el display: flex; hacemos que las cosas que tengamos en esa clase
+                    se posicione una alado de la otra*/
+                    display: flex;
+                    /*Ahora le decimos que esos elementos tengan un espacio equitativo space-evenly;*/
+                    justify-content: space-evenly;
+                    /*Y que lo centre verticalmente*/
+                    align-items: center;
+                    /*y con el flex wrap wrap hacemos que si no cabe alguno de esos elementos que los pocicione abajo*/
+                    flex-wrap: wrap;
+                }
+                
+                .cont-expert {
+                    /*El contenido de expertos en tendra un ancho de 30% y estara centrado*/
+                    width: 30%;
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                /*ahora las imagenes de nuestro contenedor de expertos en tendran un ancho del
+                80% y un espaciado automatico*/
+                
+                .cont-expert img {
+                    width: 80%;
+                    display: block;
+                    margin: 0 auto;
+                }
+                /*Ahora cambiaremos el formato de los textos de nuestro apartado expertos en*/
+                
+                .n-expert {
+                    display: inline-block;
+                    margin-top: 20px;
+                    width: 100%;
+                    font-weight: 400;
+                }
+                /*Apartado imagenes animadas*/
+                
+                .imganimada {
+                    transition: transform 0.5s;
+                }
+                
+                .imganimada:hover {
+                    transform: scale(1.2);
+                    cursor: pointer;
+                }
+                /*      Apartado Footer      */
+                
+                footer {
+                    background: #9f8ad0;
+                    padding-bottom: 0.1px;
+                }
+                
+                .footer-content {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    padding-top: 60px;
+                    padding-bottom: 40px;
+                }
+                
+                .contact-us {
+                    width: 40%;
+                    color: #fff;
+                }
+                
+                .compañia {
+                    font-weight: 500;
+                    font-size: 40px;
+                }
+                
+                .compañia+p {
+                    font-weight: 500;
+                }
+                
+                .social-media {
+                    width: 50%;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+                /*apartado de los iconos de nuestro contacto*/
+                
+                .social-media-icon {
+                    display: inline-block;
+                    margin-left: 20px;
+                    width: 60px;
+                    height: 60px;
+                    border: 1px solid #fff;
+                    border-radius: 50%;
+                    text-align: center;
+                    color: #fff;
+                }
+                
+                .social-media-icon:hover {
+                    background: #fff;
+                    color: #764ba2;
+                }
+                
+                .social-media-icon i {
+                    font-size: 30px;
+                    line-height: 60px;
+                }
+                
+                .line {
+                    width: 90%;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    height: 2px;
+                    background: #fff;
+                    margin-bottom: 60px;
+                }
+                
+                .wave {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                }
+                
+                .imgyo {
+                    width: 190px;
+                    height: 190px;
+                    border-radius: 50%;
+                    /*Estas 2 centencias margin:auto; display:block; nos sirven para centrar la imagen*/
+                    margin: auto;
+                    display: block;
+                }
+                /*Ahora le decimos que queremos justificados todos los parrafos con:   text-align: justify;*/
+                
+                p {
+                    text-align: justify;
+                }
+                
+                .subtitulosprecentacion {
+                    text-align: center;
+                    font-weight: 450;
+                    color: #8366c7;
+                    margin-bottom: 40px;
+                    font-size: 30px;
+                }
+                /*Creamos otro line para el apartado sobre mi para ponerle una linea debajo de mi contenedor*/
+                
+                .line2 {
+                    width: 90%;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    height: 2px;
+                    background: rgb(196, 195, 195);
+                    margin-bottom: 60px;
+                }
+                
+                @media screen and (max-width:800px) {
+                    .menu-navegacion {
+                        width: 50vw;
+                    }
+                    .titulo {
+                        font-size: 40px;
+                    }
+                    /*le decimos que la imagen del contenedor servicio tenga esta medida*/
+                    .contenedor-servicio img {
+                        width: 80%;
+                        margin-bottom: 40px;
+                    }
+                    /*Ahora en el apartado de los textos de nuestros servicios (.checklist-servicio )tengan esta anchura para que se acople a la imagen de los servicios*/
+                    .checklist-servicio {
+                        width: 80%;
+                    }
+                    .service {
+                        margin-bottom: 30px;
+                    }
+                    .agregar-imagen {
+                        width: 80%;
+                    }
+                    .img-galeria {
+                        /*Ahora a las imagenes de nuestra galeria le damos una anchura del 45% para que se posicionen 2 en cada fila*/
+                        width: 45%;
+                    }
+                    .cont-expert {
+                        /*Ahora al contenido de nuestra experiencia le damos una anchura del 80% para que las imagenes se posicionen una abajo de la otra*/
+                        width: 80%;
+                    }
+                    /*Ahora configuraremos el footer para que los iconos de las redes sociales se acomoden bien de tamaño y no se deformen*/
+                    .footer-content {
+                        /*con esto centramos todo el contenido del footer*/
+                        justify-content: center;
+                    }
+                    .social-media {
+                        width: 80%;
+                        justify-content: space-evenly;
+                    }
+                    .social-media i {
+                        margin-left: 0;
+                    }
+                    .contact-us {
+                        /*Con esto modificamos los contactos para darle tamaño adecuado y espaciado x igual(redes socialeS)*/
+                        text-align: center;
+                        width: 80%;
+                        margin-bottom: 40px;
+                    }
+                }
+                
+                @media screen and (max-width:500px) {
+                    .menu-navegacion {
+                        width: 65vw;
+                    }
+                    .titulo {
+                        font-size: 30px;
+                    }
+                    .subtitulos {
+                        font-size: 30px;
+                    }
+                    .subtitulosprecentacion {
+                        font-size: 20px;
+                    }
+                    .hamburguer {
+                        top: 20px;
+                        right: 20px;
+                    }
+                    /*le decimos que la imagen del contenedor servicio tenga esta medida*/
+                    .contenedor-servicio img {
+                        width: 80%;
+                        margin-bottom: 40px;
+                    }
+                    /*Ahora en el apartado de los textos de nuestros servicios (.checklist-servicio )tengan esta anchura para que se acople a la imagen de los servicios*/
+                    .checklist-servicio {
+                        width: 80%;
+                    }
+                    .service {
+                        margin-bottom: 30px;
+                    }
+                    .agregar-imagen {
+                        width: 95%;
+                    }
+                    .img-galeria {
+                        /*Ahora a las imagenes de nuestra galeria le damos una anchura del 95% para que se posicionen 1 en una sola fila*/
+                        width: 95%;
+                    }
+                    .cont-expert {
+                        /*Ahora al contenido de nuestra experiencia le damos una anchura del 80% para que las imagenes se posicionen una abajo de la otra*/
+                        width: 80%;
+                    }
+                    /*Ahora configuraremos el footer para que los iconos de las redes sociales se acomoden bien de tamaño y no se deformen*/
+                    .footer-content {
+                        /*con esto centramos todo el contenido del footer*/
+                        justify-content: center;
+                    }
+                    .social-media {
+                        width: 100%;
+                        justify-content: space-evenly;
+                    }
+                    .social-media i {
+                        margin-left: 0;
+                    }
+                    .social-media-icon {
+                        margin-left: 0;
+                    }
+                    .contact-us {
+                        /*Con esto modificamos los contactos para darle tamaño adecuado y espaciado x igual(redes socialeS)*/
+                        text-align: center;
+                        width: 90%;
+                        margin-bottom: 40px;
+                    }
+                }
